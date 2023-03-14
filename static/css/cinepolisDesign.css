@@ -1,0 +1,48 @@
+body {
+  background-image: url(../img/Cinepolis-logo-2020.jpg);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.contenedor-principal {
+  display: flex;
+}
+
+#contenedor-lateral-1 {
+  border: 2px solid rgb(25, 0, 253);
+  border-radius: 10px;
+  width: 800px;
+  padding: 35px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+#contenedor-lateral-2 {
+  border: 2px solid rgb(25, 0, 253);
+  border-radius: 10px;
+  width: 525px;
+  padding: 35px;
+  margin-left: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.contenedor-secundario {
+  display: flex;
+  justify-content: center;
+  height: 200px;
+  width: 500px;
+}
+
+.contenedor-secundario{
+  border: 2px solid rgb(25, 0, 253);
+  border-radius: 10px;
+  padding: 35px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+

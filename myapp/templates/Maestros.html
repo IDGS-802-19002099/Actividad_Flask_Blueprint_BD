@@ -1,0 +1,41 @@
+{% extends "layout.html"%}
+
+{% block content%}
+<br>
+<h3>Maestros</h3>
+<div style="margin:15px;">
+<table class="table table-striped table-bordered" >
+    <thead>
+        <tr>
+            <th style="padding: 10px; border-bottom: 1px solid black;">ID</th>
+            <th style="padding: 10px; border-bottom: 1px solid black;">Nombre</th>
+            <th style="padding: 10px; border-bottom: 1px solid black;">Apellido</th>
+            <th style="padding: 10px; border-bottom: 1px solid black;">Email</th>
+            <th style="padding: 10px; border-bottom: 1px solid black;">Fecha de Creacion</th>
+            <th style="padding: 10px; border-bottom: 1px solid black;">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for dato in resultset %}
+        <tr>
+            <td style="border-bottom: 1px solid black;">{{ dato[0] }}</td>
+            <td style="border-bottom: 1px solid black;">{{ dato[1] }}</td>
+            <td style="border-bottom: 1px solid black;">{{ dato[2] }}</td>
+            <td style="border-bottom: 1px solid black;">{{ dato[3] }}</td>
+            <td style="border-bottom: 1px solid black;">{{ dato[4] }}</td>
+            <td>
+                <a class="btn btn-danger" href="eliminarMaestro?id={{dato[0]}}"><i class="icon-remove icon-white"></i> Eliminar</a>
+                <a class="btn btn-warning" href="formularioActualizarMaestro?ID={{dato[0]}}&Nombre={{dato[1]}}&Apellido={{dato[2]}}&email={{dato[3]}}&fecha={{dato[4]}}"><i class="icon-pencil icon-white"></i> Modificar</a>
+                </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+<br><br>
+<form action="/formularioMaestro" id="form1" method="POST">
+    <input type="hidden" name="csrf_token" value="{{csrf_token()}}"/>
+    <input type="submit"  class="btn btn-success"  name="maestro" value="Insertar nuevo"/>
+  </form>
+
+{%endblock%}

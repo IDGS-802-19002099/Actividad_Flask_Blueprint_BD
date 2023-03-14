@@ -1,0 +1,46 @@
+{% extends "layout.html" %} 
+ 
+{% block content%}
+
+
+<form action="/actualizarAlumno" id="form1" method="POST">
+    <input type="hidden" name="csrf_token" value="{{csrf_token()}}"/>
+    <div class="control-group"  style="display:none;">
+        <label for="ID" class="control-label" hidden>ID</label>
+        <div class="controls">
+            <input type="text" name="ID" placeholder="ID" value="{{ID}}" >
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label for="Nombre" class="control-label">Nombre</label>
+        <div class="controls">
+            <input type="text" name="Nombre" placeholder="Nombre" value="{{Nombre}}">
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label for="Apellido" class="control-label">Apellido</label>
+        <div class="controls">
+            <input type="text" name="Apellido" placeholder="Apellido" value="{{Apellido}}">
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label for="email" class="control-label">email</label>
+        <div class="controls">
+            <input type="text" name="email" placeholder="email" value="{{email}}">
+        </div>
+    </div>
+
+    <div class="control-group"  style="display:none;">
+        <label for="fecha" class="control-label" hidden>fecha</label>
+        <div class="controls">
+            <input type="text" name="fecha" placeholder="fecha" value="{{fecha}}" >
+        </div>
+    </div>
+
+
+    <input type="submit"  class="btn btn-success" id="alumnos" name="alumnos" value="Actualizar"/>
+</form>
+{% endblock %}

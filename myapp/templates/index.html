@@ -1,0 +1,17 @@
+{% extends "layout.html" %} 
+ 
+{% block content%}
+
+<h2>Bienvenido al sistema</h2>
+<h6>Selecciona el catálogo que desees editar</h6>
+  <form form name="sent" action="/consultaAlumnos" id="form1" method="POST" >
+    <input type="hidden" name="csrf_token" value="{{csrf_token()}}"/>
+    <input type="submit"  class="btn btn-success" id="alumnos" name="alumnos" value="Alumnos"/>
+  </form>
+           
+
+  <form form name="sent" action="/consultaMaestros" id="form1" method="POST">
+    <input type="hidden" name="csrf_token" value="{{csrf_token()}}"/>
+    <input type="submit"  class="btn btn-warning" id="maestros" name="maestros" value="Maestros"/>
+  </form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "layout.html" %} 
+ 
+{% block content%}
+{%from "_macros.html" import render_input%}
+
+
+<form action="/insertarAlumno" id="form1" method="POST">
+    <input type="hidden" name="csrf_token" value="{{csrf_token()}}"/>
+
+    {{render_input('Nombre', 'Nombre', type="text")}}
+    {{render_input('Apellido', 'Apellido', type="text")}}
+    {{render_input('email', 'email', type="text")}}
+
+    
+    <input type="submit"  class="btn btn-success" id="alumnos" name="alumnos" value="Insertar"/>
+</form>
+{% endblock %}
